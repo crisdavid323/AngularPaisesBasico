@@ -1,0 +1,17 @@
+<h2>Por país</h2>
+<hr class="col-11">
+<div class="row">
+    <div class="col-11">
+        <app-pais-input (onEnter)="buscar($event)" (onDebounce)="sugerencias($event)" placeholder="Buscar país..." ></app-pais-input>
+    </div>
+</div>
+<hr class="col-11">
+<div *ngIf="hayError" class="alert alert-danger col-11">
+    No se encontró nada con el {{termino}}
+</div>
+<div *ngIf="!hayError" class="row">
+    <div class="col-11">
+        <!-- Para llamar la información para el input se debe agregar la propiedad -->
+        <app-pais-tabla [paises]="paises"></app-pais-tabla>
+    </div>
+</div>
