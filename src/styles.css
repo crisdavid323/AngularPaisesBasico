@@ -4,4 +4,17 @@
 .mr-1{
     background-color: #0F3F9E;
     margin-right: 1%;
+    border: #0F3F9E;
+}
+.list-group .active{
+    background: #0F3F9E !important
+}
+.list-group > .list-group-item-action:hover{
+    background-color: #0F3F9E;
+}
+.nav-link:hover {
+    color: white;
+}
+.nav-link {
+    color: #0F3F9E;
 }

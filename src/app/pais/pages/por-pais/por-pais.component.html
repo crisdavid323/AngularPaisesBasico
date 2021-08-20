@@ -1,11 +1,21 @@
-<h2>Por país</h2>
-<hr class="col-11">
-<div class="row">
-    <div class="col-11">
-        <app-pais-input (onEnter)="buscar($event)" (onDebounce)="sugerencias($event)" placeholder="Buscar país..." ></app-pais-input>
+<div class="animate__animated animate__slideInUp">
+    <h2>Por país</h2>
+    <hr class="col-11">
+    <div class="row">
+        <div class="col-11">
+            <app-pais-input (onEnter)="buscar($event)" (onDebounce)="sugerencias($event)" placeholder="Buscar país..." ></app-pais-input>
+        </div>
     </div>
+    <ul *ngIf="mostrarSugerencias" class="list-group col-11">
+        <li *ngFor="let pais of paisesSugeridos" class="list-group-item list-group-item-action">
+            <a class="nav-link" [routerLink]="['/pais', pais.alpha2Code]">{{pais.name}}</a>
+        </li>
+        <li class="list-group-item list-group-item-action" (click)="buscarSugerido(termino)">
+            <a class="nav-link" >Buscar "{{termino}}"</a>
+        </li>
+    </ul>
 </div>
-<hr class="col-11">
+
 <div *ngIf="hayError" class="alert alert-danger col-11">
     No se encontró nada con el {{termino}}
 </div>

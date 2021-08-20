@@ -1,3 +1,6 @@
 #acciones{
     background-color: #0F3F9E;
 }
+li {
+    cursor: pointer;
+}
